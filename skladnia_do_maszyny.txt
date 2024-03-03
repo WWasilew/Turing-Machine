@@ -1,0 +1,92 @@
+SKŁADNIA DO TURINGA:
+1. PIERWSZA LINIJKA:
+Alfabet
+
+2. DRUGA LINIJKA:
+#input#
+
+3.TRZECIA LINIJKA:
+MARKER (np: #)
+
+4. CZWARTA LINIJKA:
+stan początkowy
+
+5. PIĄTA LINIJKA:
+koniec : liczba stanów końcowych
+zapisujemy tak:
+koniec : 2
+
+6. LINIJKI NA STANY KOŃCOWE:
+nazwa_stanu_koncowego_1 : L : "komentarz do stanu1"
+nazwa_stanu_koncowego_2 : L : "komentarz do stanu2"
+
+np: 
+tak : L : accept
+nie : L : reject
+
+7. LINIJKA PRZERWY PO STANACH KOŃCOWYCH
+
+8. LINIJKA W KTÓREJ ZAPISUJEMY 
+graf : liczba wszystkich stanów
+
+9. WYPISYWANIE PO KOLEI NAZWY STANÓW WRAZ Z DEFINICJAMI DO ALFABETU:
+np:
+start:
+a : napisz : # : P : nastepny_stan
+b : napisz : # : P : nastepny_stan
+
+ZOSTAWIAMY LINIJKE PRZERWY I ZAPISUJEMY DEFINICJE KOLEJNEGO STANU
+
+STANY KONCOWE DEFINIUJEMY TAK:
+stan_koncowy_1 : komentarz(np, 1)
+stan_koncowy_2 : komentarz(np, 2)
+
+
+
+=========================================================================================
+PRZYKŁADOWA SKŁADNIA DLA PALINDROMA:
+('ab#' to pierwsza linijka dokumentu)
+ab#
+#aabbaa#
+#
+start
+koniec : 2
+accept : L : accept
+reject : L : reject
+
+graf : 8
+start:
+a : napisz : # : P : haveA
+b : napisz : # : P : haveB
+# : napisz : # : L : accept
+
+haveA:
+a : napisz : a : P : haveA
+b : napisz : b : P : haveA
+# : napisz : # : L : matchA
+
+haveB:
+a : napisz : a : P : haveB
+b : napisz : b : P : haveB
+# : napisz : # : L : matchB
+
+matchA:
+a : napisz : # : L : back
+b : napisz : b : L : reject
+# : napisz : # : L : accept
+
+matchB:
+a : napisz : a : L : reject
+b : napisz : # : L : back
+# : napisz : # : L : accept
+
+back:
+a : napisz : a : L : back
+b : napisz : b : L : back
+# : napisz : # : P : start
+
+accept : 1
+
+reject : 0
+
+

@@ -1,0 +1,75 @@
+#@.,abc
+#abc.abc@abc.ac#
+#
+start
+koniec : 2
+tak : L : accept
+nie : L : reject
+
+graf : 9
+start:
+# : napisz : # : L : nie
+@ : napisz : # : L : nie
+. : napisz : # : L : nie
+, : napisz : # : L : nie
+a : napisz : a : P : stan_przed_malpa
+b : napisz : b : P : stan_przed_malpa
+c : napisz : c : P : stan_przed_malpa
+
+stan_przed_malpa:
+# : napisz : # : L : nie
+@ : napisz : @ : P : stan_malpa
+. : napisz : . : P : stan_przed_malpa_kropka
+, : napisz : , : L : nie
+a : napisz : a : P : stan_przed_malpa
+b : napisz : b : P : stan_przed_malpa
+c : napisz : c : P : stan_przed_malpa
+
+stan_przed_malpa_kropka:
+# : napisz : # : L : nie
+@ : napisz : # : L : nie
+. : napisz : # : L : nie
+, : napisz : # : L : nie
+a : napisz : a : P : stan_przed_malpa
+b : napisz : b : P : stan_przed_malpa
+c : napisz : c : P : stan_przed_malpa
+
+stan_malpa:
+# : napisz : # : L : nie
+@ : napisz : # : L : nie
+. : napisz : # : L : nie
+, : napisz : # : L : nie
+a : napisz : a : P : stan_po_malpie
+b : napisz : b : P : stan_po_malpie
+c : napisz : c : P : stan_po_malpie
+
+stan_po_malpie:
+# : napisz : # : L : nie
+@ : napisz : # : L : nie
+. : napisz : . : P : stan_po_malpie_kropka
+, : napisz : # : L : nie
+a : napisz : a : P : stan_po_malpie
+b : napisz : b : P : stan_po_malpie
+c : napisz : c : P : stan_po_malpie
+
+stan_po_malpie_kropka:
+# : napisz : # : L : nie
+@ : napisz : # : L : nie
+. : napisz : # : L : nie
+, : napisz : # : L : nie
+a : napisz : a : P : stan_po_malpie_po_kropce
+b : napisz : b : P : stan_po_malpie_po_kropce
+c : napisz : c : P : stan_po_malpie_po_kropce
+
+stan_po_malpie_po_kropce:
+# : napisz : # : L : tak
+@ : napisz : # : L : nie
+. : napisz : . : P : stan_po_malpie_kropka
+, : napisz : # : L : nie
+a : napisz : a : P : stan_po_malpie_po_kropce
+b : napisz : b : P : stan_po_malpie_po_kropce
+c : napisz : c : P : stan_po_malpie_po_kropce
+
+tak : 1
+
+nie : 0

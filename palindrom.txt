@@ -1,0 +1,42 @@
+ab#
+#aabbaa#
+#
+start
+koniec : 2
+accept : L : accept
+reject : L : reject
+
+graf : 8
+start:
+a : napisz : # : P : haveA
+b : napisz : # : P : haveB
+# : napisz : # : L : accept
+
+haveA:
+a : napisz : a : P : haveA
+b : napisz : b : P : haveA
+# : napisz : # : L : matchA
+
+haveB:
+a : napisz : a : P : haveB
+b : napisz : b : P : haveB
+# : napisz : # : L : matchB
+
+matchA:
+a : napisz : # : L : back
+b : napisz : b : L : reject
+# : napisz : # : L : accept
+
+matchB:
+a : napisz : a : L : reject
+b : napisz : # : L : back
+# : napisz : # : L : accept
+
+back:
+a : napisz : a : L : back
+b : napisz : b : L : back
+# : napisz : # : P : start
+
+accept : 1
+
+reject : 0
