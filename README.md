@@ -2,7 +2,7 @@
 
 
 
-This project is a Python implementation of a Turing Machine emulator. It allows users to define, execute, and simulate the behavior of a Turing Machine based on custom-defined rules. The program reads its configuration and instructions from a text file and processes inputs accordingly.
+This project is a Python implementation of a Turing Machine emulator. It allows users to define, execute, and simulate the behavior of a Turing Machine based on custom-defined rules. The program reads its configuration and instructions from a text file and processes inputs accordingly. Experiment, learn, and explore the power of Turing Machine! 
 
 ## Features
 
@@ -56,9 +56,50 @@ The syntax for defining the Turing Machine configuration is detailed in the `skl
 
 ### Example Configuration
 
-Below is a simple example of a configuration file:
+Below is a simple example of a configuration file for PALINDROME:
 ```
-no
+ab#                        # Alphabet
+#aabbaa#                   # Input
+#                          # Begining and ending char
+start                      # Start state
+koniec : 2                 # Number of end states
+accept : L : accept        # 1st end state with instruction to move Left and return "accept"
+reject : L : reject        # 2nd end state with instruction to move Left and return "reject"
+
+graf : 8                   # Defining how many states are needed and their instructions for each char from alphabet
+start:
+a : napisz : # : P : haveA
+b : napisz : # : P : haveB
+# : napisz : # : L : accept
+
+haveA:
+a : napisz : a : P : haveA
+b : napisz : b : P : haveA
+# : napisz : # : L : matchA
+
+haveB:
+a : napisz : a : P : haveB
+b : napisz : b : P : haveB
+# : napisz : # : L : matchB
+
+matchA:
+a : napisz : # : L : back
+b : napisz : b : L : reject
+# : napisz : # : L : accept
+
+matchB:
+a : napisz : a : L : reject
+b : napisz : # : L : back
+# : napisz : # : L : accept
+
+back:
+a : napisz : a : L : back
+b : napisz : b : L : back
+# : napisz : # : P : start
+
+accept : 1
+
+reject : 0
 ```
 
 ## Project Structure
@@ -98,8 +139,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 Created by [WWasilew](https://github.com/WWasilew). Feel free to contact me for any questions, suggestions, or feedback!
-
----
-
-Experiment, learn, and explore the power of Turing Machines! ⚛
 
