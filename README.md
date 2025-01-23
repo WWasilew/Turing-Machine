@@ -19,8 +19,6 @@ This project is a Python implementation of a Turing Machine emulator. It allows 
 
 Follow these steps to set up and run the Turing Machine emulator on your local system.
 
-![image alt](https://github.com/WWasilew/Turing-Machine/blob/9d873b26e0dc6db993751013b057e9591b83cb7b/machine.png)
-
 ### Prerequisites
 
 - Python 3.7 or higher installed on your system.
@@ -57,6 +55,8 @@ The syntax for defining the Turing Machine configuration is detailed in the `skl
 - **Reject State(s)**: State(s) where the machine halts and rejects the input.
 
 ### Example Configuration
+
+![image alt](https://github.com/WWasilew/Turing-Machine/blob/9d873b26e0dc6db993751013b057e9591b83cb7b/machine.png)
 
 Below is a simple example of a configuration file for PALINDROME:
 ```
