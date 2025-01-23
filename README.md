@@ -1,6 +1,6 @@
 # Turing Machine 
 
-
+![image alt](https://github.com/WWasilew/Turing-Machine/blob/9d873b26e0dc6db993751013b057e9591b83cb7b/Turing_Machine.png)
 
 This project is a Python implementation of a Turing Machine emulator. It allows users to define, execute, and simulate the behavior of a Turing Machine based on custom-defined rules. The program reads its configuration and instructions from a text file and processes inputs accordingly. Experiment, learn, and explore the power of Turing Machine! 
 
@@ -18,6 +18,8 @@ This project is a Python implementation of a Turing Machine emulator. It allows 
 ## Getting Started
 
 Follow these steps to set up and run the Turing Machine emulator on your local system.
+
+![image alt](https://github.com/WWasilew/Turing-Machine/blob/9d873b26e0dc6db993751013b057e9591b83cb7b/machine.png)
 
 ### Prerequisites
 
